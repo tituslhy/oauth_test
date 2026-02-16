@@ -92,7 +92,7 @@ allowed_executables = ["npx", "uvx"]
 
 [UI]
 # Name of the assistant.
-name = "Assistant"
+name = "SearchGPT"
 
 # default_theme = "dark"
 
