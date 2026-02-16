@@ -1,5 +1,6 @@
 import chainlit as cl
 import logging
+import json
 
 from src.on_chat_start import setup_agent
 from src.on_message import invoke_agent
@@ -21,10 +22,11 @@ async def oauth_callback(
 
     if not email.endswith("@gmail.com"): #ideally this should be "@your_company_domain.com"
         return None  # Reject user
+    
+    logger.info(f"User authenticated: {default_user.identifier} has logged in")
 
     return default_user
 
-#%%
 @cl.on_chat_start
 async def on_chat_start():
     setup_agent()
