@@ -5,9 +5,15 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
+    "authlib>=1.6.8",
     "chainlit>=2.9.6",
     "dotenv>=0.9.9",
+    "fastapi>=0.129.0",
+    "itsdangerous>=2.2.0",
     "llama-index>=0.14.14",
     "llama-index-tools-tavily-research>=0.4.2",
     "openai>=2.21.0",
+    "python-jose[cryptography]>=3.5.0",
+    "python-multipart>=0.0.22",
+    "uvicorn>=0.40.0",
 ]
