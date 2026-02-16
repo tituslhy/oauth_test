@@ -10,6 +10,20 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
+@cl.oauth_callback
+async def oauth_callback(
+    provider_id: str,
+    token: str,
+    raw_user_data: dict,
+    default_user: cl.User,
+):
+    email = raw_user_data.get("email")
+
+    if not email.endswith("@gmail.com"):
+        return None  # Reject user
+
+    return default_user
+
 #%%
 @cl.on_chat_start
 async def on_chat_start():
