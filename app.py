@@ -19,7 +19,7 @@ async def oauth_callback(
 ):
     email = raw_user_data.get("email")
 
-    if not email.endswith("@gmail.com"):
+    if not email.endswith("@gmail.com"): #ideally this should be "@your_company_domain.com"
         return None  # Reject user
 
     return default_user
